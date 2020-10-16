@@ -9,7 +9,7 @@ Cloudant Airport Searcher is a Python application for finding airports by provid
 - Python 3.5.3 or above
 - [Cloudant Python SDK](https://github.com/IBM/cloudant-python-sdk)
 
-##Installation
+## Installation
 To install Cloudant Python SDK, use ```pip``` or ```easy_install```:
 ```
 pip install --upgrade "ibmcloudant>=0.0.26"
@@ -20,7 +20,7 @@ easy_install --upgrade "ibmcloudant>=0.0.26"
 ```
 ## Usage
 
-###Setting the environment variables
+### Setting the environment variables
 First, you need to extend your environment variables with the authentication type 
 to use 'NOAUTH' authentication while reaching the 'airportdb' database.
 This step is necessary for the SDK to know that it doesn't have to use any authenticating.
