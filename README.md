@@ -29,9 +29,9 @@ Set the environment variable on Linux and OSX systems with:
 ```
 export AIRPORTS_AUTH_TYPE=NOAUTH
 ```
-on Windows: 
+in Windows PowerShell:
 ```
-SET AIRPORTS_AUTH_TYPE=NOAUTH
+$env:AIRPORTS_AUTH_TYPE="NOAUTH"
 ```
 
 ### Using the application
