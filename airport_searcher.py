@@ -14,13 +14,14 @@ class AirportService:
 
     def search_airports(self):
         print('Searching for airports by the following parameters: lon:[' +
-              self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + '] AND lat:[' +
-              self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + ']')
+              self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + '] and lat:[' +
+              self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + '] with a limit of 200... ')
 
         airport_search_response = self.airport_service.post_search(
             db=self.db_name,
             ddoc='view1',
             index='geo',
+            limit=200,
             query='lon:[' + self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + '] AND lat:[' +
                   self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + ']'
         ).get_result()
