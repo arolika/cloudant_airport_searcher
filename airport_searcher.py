@@ -39,13 +39,13 @@ class AirportService:
                     airports.append(airport)
         return sorted(airports, key=lambda k: k['distance'])
 
-    def printEnd(self, airports):
+    def print_results(self, airports):
         if (airports != []):
             for airport in airports:
                 try:
                     print("Name: " + airport["fields"]["name"] + ", Distance: " + str(airport["distance"]))
                 except:
-                    print("An exception occurred")
+                    print("Something went wrong.")
         else:
             print("Couldn't find airports with the given parameters, exiting the program...")
 
@@ -92,7 +92,7 @@ class AirportService:
 def main():
     print("Welcome to the airport searcher! Please enter the following parameters:")
     airport_service = AirportService()
-    airport_service.printEnd(airport_service.search_airports())
+    airport_service.print_results(airport_service.search_airports())
 
 
 if __name__ == "__main__":
