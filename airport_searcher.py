@@ -14,15 +14,15 @@ class AirportService:
 
     def search_airports(self):
         print('Searching for airports by the following parameters: lon:[' +
-              self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + '] AND lat:[' +
-              self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + ']')
+              self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + '] AND lat:[' +
+              self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + ']')
 
         airport_search_response = self.airport_service.post_search(
             db=self.db_name,
             ddoc='view1',
             index='geo',
-            query='lon:[' + self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + '] AND lat:[' +
-                  self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + ']'
+            query='lon:[' + self.query_data["from_lon"] + ' TO ' + self.query_data["to_lon"] + '] AND lat:[' +
+                  self.query_data["from_lat"] + ' TO ' + self.query_data["to_lat"] + ']'
         ).get_result()
 
         return self.find_and_sort_airports(airport_search_response)
